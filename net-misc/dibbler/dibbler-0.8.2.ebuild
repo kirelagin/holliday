@@ -1,10 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dibbler/dibbler-0.8.0.ebuild,v 1.1 2011/12/04 10:23:32 hwoarang Exp $
 
 EAPI="4"
 
-inherit autotools eutils flag-o-matic toolchain-funcs
+inherit autotools
 
 DESCRIPTION="Portable DHCPv6 implementation (server, client and relay)"
 HOMEPAGE="http://klub.com.pl/dhcpv6/"
@@ -13,27 +12,12 @@ SRC_URI="http://klub.com.pl/dhcpv6/dibbler/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~mips ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 DEPEND=""
 RDEPEND=""
 
 DIBBLER_DOCDIR=${S}/doc
-
-src_prepare() {
-	# TODO: FIX ME!
-	append-ldflags $(no-as-needed)
-	sed -i \
-		-e "s#CC           ?= gcc#CC           ?= $(tc-getCC)#g" \
-		-e "s#CXX          ?= g++#CXX          ?= $(tc-getCXX)#g" \
-		Makefile.inc || die "Patching Makefile.inc failed"
-	cd "${S}"/poslib
-	eautoreconf
-}
-
-src_compile() {
-	emake -j1
-}
 
 src_install() {
 	dosbin dibbler-server
