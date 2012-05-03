@@ -9,7 +9,7 @@ inherit autotools eutils flag-o-matic toolchain-funcs
 DESCRIPTION="Portable DHCPv6 implementation (server, client and relay)"
 HOMEPAGE="http://klub.com.pl/dhcpv6/"
 
-SRC_URI="http://klub.com.pl/dhcpv6/dibbler/${P}-src.tar.gz"
+SRC_URI="http://klub.com.pl/dhcpv6/dibbler/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
