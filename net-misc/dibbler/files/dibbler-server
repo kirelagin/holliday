@@ -9,12 +9,16 @@ depend() {
 
 start() {
 	ebegin "Starting DHCPv6 server: dibbler-server"
-	/usr/sbin/dibbler-server start
+	start-stop-daemon --start --exec /usr/sbin/dibbler-server \
+		--pidfile /var/lib/dibbler/server.pid \
+		-- start
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping DHCPv6 server: dibbler-server"
-	/usr/sbin/dibbler-server stop
+	start-stop-daemon --stop --exec /usr/sbin/dibbler-server \
+		--pidfile /var/lib/dibbler/server.pid \
+		-- stop
 	eend $?
 }
