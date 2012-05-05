@@ -23,23 +23,21 @@ src_install() {
 	dosbin dibbler-server
 	dosbin dibbler-client
 	dosbin dibbler-relay
-	doman doc/man/dibbler-server.8 doc/man/dibbler-client.8 \
-		doc/man/dibbler-relay.8
-	dodoc CHANGELOG RELNOTES
+
+	doman doc/man/dibbler-{server,client,relay}.8
+
+	dodoc AUTHORS CHANGELOG RELNOTES TODO
+	dodoc doc/examples/*.conf
 
 	insinto /etc/dibbler
-	doins *.conf
+	doins doc/examples/{server,client,relay}.conf
 	dodir /var/lib/dibbler
 
-	use doc && dodoc ${DIBBLER_DOCDIR}/dibbler-user.pdf \
-			${DIBBLER_DOCDIR}/dibbler-devel.pdf
+	use doc && dodoc ${DIBBLER_DOCDIR}/dibbler-user.pdf
 
 	insinto /etc/init.d
-	doins "${FILESDIR}/dibbler-server" "${FILESDIR}/dibbler-client" \
-		"${FILESDIR}/dibbler-relay"
-	fperms 755 /etc/init.d/dibbler-server
-	fperms 755 /etc/init.d/dibbler-client
-	fperms 755 /etc/init.d/dibbler-relay
+	doins "${FILESDIR}"/dibbler-{server,client,relay}
+	fperms 755 /etc/init.d/dibbler-{server,client,relay}
 }
 
 pkg_postinst() {
