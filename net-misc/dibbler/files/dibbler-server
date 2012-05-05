@@ -7,18 +7,21 @@ depend() {
 	need net
 }
 
+DIBBLER_BINARY=/usr/sbin/dibbler-server
+DIBBLER_PIDFILE=/var/lib/dibbler/server.pid
+
 start() {
 	ebegin "Starting DHCPv6 server: dibbler-server"
-	start-stop-daemon --start --exec /usr/sbin/dibbler-server \
-		--pidfile /var/lib/dibbler/server.pid \
+	start-stop-daemon --start --exec ${DIBBLER_BINARY} \
+		--pidfile ${DIBBLER_PIDFILE} \
 		-- start
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping DHCPv6 server: dibbler-server"
-	start-stop-daemon --stop --exec /usr/sbin/dibbler-server \
-		--pidfile /var/lib/dibbler/server.pid \
+	start-stop-daemon --stop --exec ${DIBBLER_BINARY} \
+		--pidfile ${DIBBLER_PIDFILE} \
 		-- stop
 	eend $?
 }
