@@ -12,7 +12,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="sys-apps/systemd"
+DEPEND="
+	sys-apps/systemd
+	virtual/init
+"
+
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
