@@ -448,8 +448,6 @@ if [[ -z ${EBUILD} ]] ; then
 		esac
 	done
 
-	setup_defaultlevels
-
 	# If we are not /sbin/rc then ensure that we cannot change level variables
 	if [[ -n ${BASH_SOURCE} \
 		&& ${BASH_SOURCE[${#BASH_SOURCE[@]}-1]} != "/sbin/rc" ]] ; then
