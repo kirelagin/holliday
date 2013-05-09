@@ -35,5 +35,5 @@ src_install() {
 	done
 
 	doman init.1
-	dosym ../usr/bin/systemd /sbin/init
+	dosym ../usr/lib/systemd/systemd /sbin/init
 }
