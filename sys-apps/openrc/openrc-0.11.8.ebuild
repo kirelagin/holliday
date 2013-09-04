@@ -14,7 +14,6 @@ IUSE=""
 
 DEPEND="
 	sys-apps/systemd
-	virtual/init
 "
 
 RDEPEND="${DEPEND}"
