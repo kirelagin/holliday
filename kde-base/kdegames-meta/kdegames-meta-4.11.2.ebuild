@@ -10,11 +10,11 @@ KEYWORDS="amd64"
 IUSE="opengl python"
 
 RDEPEND="
-	$(add_kdebase_dep bomber)
 	$(add_kdebase_dep katomic)
 	$(add_kdebase_dep kblocks)
 	$(add_kdebase_dep kgoldrunner)
 "
+#	$(add_kdebase_dep bomber)
 #	$(add_kdebase_dep bovo)
 #	$(add_kdebase_dep granatier)
 #	$(add_kdebase_dep kapman)
