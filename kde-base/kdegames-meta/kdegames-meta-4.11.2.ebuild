@@ -5,22 +5,24 @@ EAPI=5
 inherit kde4-meta-pkg
 
 DESCRIPTION="kdegames - merge this to pull in all kdegames-derived packages"
+HOMEPAGE="http://games.kde.org/"
 KEYWORDS="amd64"
 IUSE="opengl python"
 
-RDEPEND=""
-#	$(add_kdebase_dep bomber)
+RDEPEND="
+	$(add_kdebase_dep bomber)
+	$(add_kdebase_dep katomic)
+	$(add_kdebase_dep kblocks)
+	$(add_kdebase_dep kgoldrunner)
+"
 #	$(add_kdebase_dep bovo)
 #	$(add_kdebase_dep granatier)
 #	$(add_kdebase_dep kapman)
-#	$(add_kdebase_dep katomic)
 #	$(add_kdebase_dep kblackbox)
-#	$(add_kdebase_dep kblocks)
 #	$(add_kdebase_dep kbounce)
 #	$(add_kdebase_dep kbreakout)
 #	$(add_kdebase_dep kdiamond)
 #	$(add_kdebase_dep kfourinline)
-#	$(add_kdebase_dep kgoldrunner)
 #	$(add_kdebase_dep killbots)
 #	$(add_kdebase_dep kigo)
 #	$(add_kdebase_dep kiriki)

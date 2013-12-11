@@ -5,6 +5,7 @@ EAPI=5
 inherit kde4-meta-pkg
 
 DESCRIPTION="KDE toys - merge this to pull in all kdetoys-derived packages"
+HOMEPAGE+=" http://techbase.kde.org/Projects/Kdetoys"
 KEYWORDS="amd64"
 IUSE=""
 

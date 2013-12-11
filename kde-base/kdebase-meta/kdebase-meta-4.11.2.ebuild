@@ -53,7 +53,7 @@ RDEPEND="
 	$(add_kdebase_dep plasma-workspace)
 	$(add_kdebase_dep powerdevil)
 	$(add_kdebase_dep qguiplatformplugin_kde)
-	$(add_kdebase_dep solid)
+	$(add_kdebase_dep solid-actions-kcm)
 	$(add_kdebase_dep systemsettings)
 	!prefix? ( $(add_kdebase_dep kdm) )
 "
