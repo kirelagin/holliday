@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 "
 
 DOCS=(AUTHORS README)
+PATCHES=( "${FILESDIR}"/${P}.patch )
 
 src_install() {
 	if use doc; then

@@ -1,0 +1,26 @@
+--- a/src/oxygenthemingengine.cpp	2013-12-14 19:11:42.242832243 -0500
++++ b/src/oxygenthemingengine.cpp	2013-12-14 19:12:36.086951160 -0500
+@@ -493,13 +493,6 @@
+ 
+             }
+ 
+-        } else if( gtk_theming_engine_has_class( engine, GTK_STYLE_CLASS_LIST_ROW ) ) {
+-
+-            GtkStateFlags state( gtk_theming_engine_get_state( engine ) );
+-            StyleOptions options( widget, state );
+-            if( options & (Selected|Hover) )
+-            { Style::instance().renderSelection( context, x, y, w, h, TileSet::Horizontal, options ); }
+-
+         } else if(
+             gtk_theming_engine_has_class( engine, GTK_STYLE_CLASS_SPINBUTTON ) &&
+             !gtk_theming_engine_has_class( engine, GTK_STYLE_CLASS_ENTRY ) )
+@@ -508,8 +501,7 @@
+             return;
+ 
+         } else if(
+-            gtk_theming_engine_has_class( engine, GTK_STYLE_CLASS_TOOLBAR ) ||
+-            gtk_widget_path_is_type( path, GTK_TYPE_HEADER_BAR ) )
++            gtk_theming_engine_has_class( engine, GTK_STYLE_CLASS_TOOLBAR ) )
+          {
+ 
+             // render background
