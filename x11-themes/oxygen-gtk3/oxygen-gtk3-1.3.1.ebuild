@@ -11,7 +11,7 @@ HOMEPAGE="https://projects.kde.org/projects/playground/artwork/oxygen-gtk"
 SRC_URI="http://download.kde.org/stable/oxygen-gtk3/1.3.1/src/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 SLOT="0"
 IUSE="debug doc"
 
