@@ -22,9 +22,10 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
+	gnome-extra/libgsf
+	media-gfx/nvidia-cg-toolkit
 	media-libs/tiff
 	media-libs/portaudio
-	gnome-extra/libgsf
 "
 
 S="${WORKDIR}/"
