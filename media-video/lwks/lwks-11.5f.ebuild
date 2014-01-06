@@ -7,7 +7,7 @@ EAPI=5
 inherit versionator unpacker gnome2-utils
 
 VERSION=($(get_all_version_components))
-MY_PNV="${PN}-${VERSION[0]}.${VERSION[2]}.$(echo ${VERSION[3} | tr 'a-z' 'A-Z')"
+MY_PNV="${PN}-${VERSION[0]}.${VERSION[2]}.$(echo ${VERSION[3]} | tr 'a-z' 'A-Z')"
 
 DESCRIPTION="LightWorks video editor software"
 HOMEPAGE="http://www.lwks.com/"
