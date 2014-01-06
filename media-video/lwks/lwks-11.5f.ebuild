@@ -4,11 +4,14 @@
 
 EAPI=5
 
-inherit unpacker gnome2-utils
+inherit versionator unpacker gnome2-utils
+
+VERSION=($(get_all_version_components))
+MY_PNV="${PN}-${VERSION[0]}.${VERSION[2]}.$(echo ${VERSION[3} | tr 'a-z' 'A-Z')"
 
 DESCRIPTION="LightWorks video editor software"
 HOMEPAGE="http://www.lwks.com/"
-SRC_URI="${PNV}-amd64.deb"
+SRC_URI="${MY_PNV}-amd64.deb"
 
 RESTRICT="fetch mirror"
 
