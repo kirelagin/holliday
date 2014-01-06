@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit versionator unpacker gnome2-utils
+inherit versionator unpacker
 
 VERSION=($(get_all_version_components))
 MY_PNV="${PN}-${VERSION[0]}.${VERSION[2]}.$(echo ${VERSION[3]} | tr 'a-z' 'A-Z')"
@@ -23,6 +23,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="
 	media-libs/tiff
+	media-libs/portaudio
 	gnome-extra/libgsf
 "
 
