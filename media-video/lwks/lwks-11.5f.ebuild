@@ -22,7 +22,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
-	media-libs/tiff:3
+	media-libs/tiff
 	gnome-extra/libgsf
 "
 
