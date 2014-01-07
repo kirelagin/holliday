@@ -27,12 +27,12 @@ RDEPEND="
 	gnome-extra/libgsf
 	media-gfx/nvidia-cg-toolkit
 	media-libs/glu
-	>=media-libs/jpeg-8c
 	media-libs/mesa
 	media-libs/tiff
 	media-libs/portaudio
 	net-misc/curl
 	sys-apps/util-linux
+	virtual/jpeg
 	>=x11-libs/cairo-1.10.0
 	>=x11-libs/gdk-pixbuf-2.22.0
 	x11-libs/gtk+:3
