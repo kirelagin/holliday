@@ -72,8 +72,6 @@ REQUIRED_USE="tools? ( X )"
 
 QA_PREBUILT="opt/* usr/lib*"
 
-S=${WORKDIR}/
-
 pkg_pretend() {
 
 	if use amd64 && has_multilib_profile && \
@@ -150,6 +148,7 @@ pkg_setup() {
 
 src_unpack() {
 	if ! use kernel_FreeBSD; then
+		mkdir -p "${S}"
 		cd "${S}"
 		unpack_makeself
 	else
