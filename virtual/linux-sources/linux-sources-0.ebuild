@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/virtual/linux-sources/linux-sources-0.ebuild,v 1.8 2013/01/19 11:46:55 thev00d00 Exp $
 
-EAPI=2
+EAPI=5
 
 DESCRIPTION="Virtual for Linux kernel sources"
 HOMEPAGE=""
