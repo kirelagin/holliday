@@ -31,6 +31,7 @@ RDEPEND="
 	konqueror? ( $(add_kdebase_dep konq-plugins) )
 	konqueror? ( $(add_kdebase_dep konqueror) )
 	$(add_kdebase_dep konsole)
+	$(add_kdebase_dep krunner)
 	$(add_kdebase_dep kscreensaver)
 	$(add_kdebase_dep ksmserver)
 	$(add_kdebase_dep ksplash)

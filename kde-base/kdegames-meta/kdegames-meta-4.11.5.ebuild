@@ -49,5 +49,6 @@ RDEPEND="
 #	$(add_kdebase_dep libkmahjongg)
 #	$(add_kdebase_dep lskat)
 #	$(add_kdebase_dep palapeli)
+#	$(add_kdebase_dep picmi)
 #	opengl? ( $(add_kdebase_dep ksudoku) )
 #	python? ( $(add_kdebase_dep kajongg) )
