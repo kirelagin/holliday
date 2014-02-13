@@ -3,11 +3,9 @@
 
 EAPI=4
 
-MY_P=systemd-${PV}
-
 DESCRIPTION="Sysvinit compatibility symlinks and manpages"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
-SRC_URI="http://www.freedesktop.org/software/systemd/${MY_P}.tar.xz"
+SRC_URI="http://www.freedesktop.org/software/systemd/systemd-${PVR}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,7 +15,7 @@ IUSE=""
 RDEPEND="!sys-apps/sysvinit
 	sys-apps/systemd"
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/systemd-${PV}
 APP="halt poweroff reboot runlevel shutdown telinit"
 
 src_compile() {
