@@ -13,11 +13,12 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
-	>=app-arch/cabextract-1.4
-    >=app-emulation/wine-1.3.23
-	>=dev-python/PyQt4-4.8.5
-	>=dev-qt/qtcore-4.7.4:4
-	>=dev-qt/qtgui-4.7.4:4
-	>=media-gfx/icoutils-0.29.1
+	app-arch/cabextract
+    app-emulation/wine
+	dev-python/PyQt4
+	dev-qt/linguist:4
+	dev-qt/qtcore:4
+	dev-qt/qtgui:4
+	media-gfx/icoutils
 "
 RDEPEND="${DEPEND}"
