@@ -13,12 +13,14 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
-	app-arch/cabextract
-    app-emulation/wine
 	dev-python/PyQt4
 	dev-qt/linguist:4
+"
+RDEPEND="${DEPEND}
+	app-arch/cabextract
+	app-emulation/wine
+	dev-lang/python:*
 	dev-qt/qtcore:4
 	dev-qt/qtgui:4
 	media-gfx/icoutils
 "
-RDEPEND="${DEPEND}"
