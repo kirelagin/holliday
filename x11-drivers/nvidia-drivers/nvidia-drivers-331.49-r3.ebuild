@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-331.49.ebuild,v 1.4 2014/03/03 21:52:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-331.49-r3.ebuild,v 1.3 2014/04/09 16:05:24 jer Exp $
 
 EAPI=5
 
@@ -13,7 +13,7 @@ AMD64_NV_PACKAGE="NVIDIA-Linux-x86_64-${PV}"
 X86_FBSD_NV_PACKAGE="NVIDIA-FreeBSD-x86-${PV}"
 AMD64_FBSD_NV_PACKAGE="NVIDIA-FreeBSD-x86_64-${PV}"
 
-DESCRIPTION="NVIDIA X11 driver and GLX libraries"
+DESCRIPTION="NVIDIA Accelerated Graphics Driver"
 HOMEPAGE="http://www.nvidia.com/"
 SRC_URI="
 	amd64-fbsd? ( ${NV_URI}FreeBSD-x86_64/${PV}/${AMD64_FBSD_NV_PACKAGE}.tar.gz )
@@ -254,6 +254,7 @@ src_install() {
 		# pkg_preinst, see bug #491414
 		insinto /etc/modprobe.d
 		newins "${FILESDIR}"/nvidia-169.07 nvidia.conf
+		use uvm && doins "${FILESDIR}"/nvidia-uvm.conf
 
 		# Ensures that our device nodes are created when not using X
 		exeinto "$(udev_get_udevdir)"
@@ -324,9 +325,15 @@ src_install() {
 		doexe ${NV_OBJ}/nvidia-cuda-mps-control
 		doexe ${NV_OBJ}/nvidia-cuda-mps-server
 		doexe ${NV_OBJ}/nvidia-debugdump
-		doexe ${NV_OBJ}/nvidia-modprobe
 		doexe ${NV_OBJ}/nvidia-persistenced
 		doexe ${NV_OBJ}/nvidia-smi
+
+		# install nvidia-modprobe setuid and symlink in /usr/bin (bug #505092)
+		doexe ${NV_OBJ}/nvidia-modprobe
+		fowners root:video /opt/bin/nvidia-modprobe
+		fperms 4710 /opt/bin/nvidia-modprobe
+		dosym /{opt,usr}/bin/nvidia-modprobe
+
 		doman nvidia-cuda-mps-control.1.gz
 		doman nvidia-modprobe.1.gz
 		doman nvidia-persistenced.1.gz
