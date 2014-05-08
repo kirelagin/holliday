@@ -1,11 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdeedu-meta/kdeedu-meta-4.12.5.ebuild,v 1.5 2014/05/08 07:32:39 ago Exp $
 
 EAPI=5
 inherit kde4-meta-pkg
 
 DESCRIPTION="KDE educational apps - merge this to pull in all kdeedu-derived packages"
-KEYWORDS="amd64"
+HOMEPAGE="http://edu.kde.org"
+KEYWORDS="amd64 ~arm ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
@@ -32,4 +34,4 @@ RDEPEND="
 #	$(add_kdebase_dep libkdeedu)
 #	$(add_kdebase_dep pairs)
 #	$(add_kdebase_dep parley)
-#	$(add_kdebase_dep rocs)
+#	!ppc64? ( $(add_kdebase_dep rocs) )
